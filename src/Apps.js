@@ -88,7 +88,9 @@ class Apps extends Component {
           className="container d-lg-flex flex-column justify-content-center align-items-center"
           style={{ height: "100vh" }}
         >
-          <h3 id="display">{this.state.display}</h3>
+          <h5 className="display-5" id="display">
+            {this.state.display}
+          </h5>
           <PadButtons onPlay={this.handlePlay} drumSet={this.state.drumSet} />
         </div>
       </React.Fragment>

@@ -16,13 +16,42 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <style>
- 
+      #drum-machine{
+        background-color: #05131a;
+      }
+      #display{
+        margin-bottom: 2rem;
+        position: relative;
+        width:12rem;
+        color: aliceblue;
+        background: linear-gradient(90deg,#03a9f4,#f441a5,#03a9f4);
+        animation: display 2s infinite alternate;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1;
+        padding: 1rem;
+      }
+      #display::before{
+          content: "";
+          position: absolute;
+          left: 0px;
+          right: 5px;
+          top: -5px;
+          bottom: -5px;
+          background: linear-gradient(90deg,#03a9f4,#f441a5,#03a9f4);
+          background-size: 300%;
+          border-radius: 10px;
+          filter: blur(20px);
+          z-index: -1;
+          animation: display 2s infinite alternate;
+      }
+
       .drum-pad{ /*Remove the underscore*/
           text-decoration: none;  
           position: absolute;
               /* Set font size */
           font-size: 24px;
-          background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+          background: linear-gradient(90deg,#03a9f4,#f441a5,#03a9f4);
           background-size: 400%;
           margin:1px;
           border-radius: 10px;
@@ -43,22 +72,27 @@
           right: 5px;
           top: -0px;
           bottom: 1px;
-          background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
-          background-size: 300%;
+          background: linear-gradient(90deg,#03a9f4,#f441a5,#03a9f4);
+          background-size: 500%;
           border-radius: 10px;
           filter: blur(20px);
           z-index: -1;
       }
       .drum-pad:hover::before{
-          animation: sun 8s infinite;
+          animation: sun 5s infinite;
       }
       .drum-pad:hover{
-          animation: sun 8s infinite;
+          animation: sun 5s infinite;
       }
 
       @keyframes sun{
           100%{
-              background-position: -400% 0;
+              background-position: -250% 0;
+          }
+      } 
+      @keyframes display{
+          100%{
+              background-position: -100% 0;
           }
       } 
 
